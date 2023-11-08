@@ -25,6 +25,18 @@ app.get('/attractions', function(req, res, next) {
   })
 })
 
+app.get('/pet', function(req, res, next) {
+  pool.query("SELECT * FROM pet", function(err, rows, fields) {
+    res.json(rows)
+  })
+})
+
+app.get('/shelter', function(req, res, next) {
+  pool.query("SELECT * FROM shelter", function(err, rows, fields) {
+    res.json(rows)
+  })
+})
+
 app.listen(5000, function() {
   console.log('web server listening on port 5000')
 })
